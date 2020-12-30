@@ -30,4 +30,4 @@ app.get('/', (req, res) => {
 
 app.use('/posts', Posts.Router);
 
-module.exports = app;
+export default app;

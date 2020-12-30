@@ -22,6 +22,7 @@ module.exports = {
     'no-console': 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
     'import/no-cycle': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
   },
   settings: {
     'import/resolver': {
