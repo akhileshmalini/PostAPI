@@ -1,0 +1,42 @@
+{
+  "name": "someapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -r esm index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akhilesh Anand",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "faker": "^5.1.0",
+    "knex": "^0.21.15",
+    "lodash": "^4.17.20",
+    "module-alias": "^2.2.2",
+    "morgan": "^1.10.0",
+    "objection": "^2.2.3",
+    "pg": "^8.5.1",
+    "prettier": "^2.2.0",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3"
+  },
+  "_moduleAliases": {
+    "@api": "src/api",
+    "@data": "src/data",
+    "@utils": "src/utils"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
