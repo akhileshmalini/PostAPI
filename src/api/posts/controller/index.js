@@ -1,29 +1,40 @@
 import { v4 as uuidv4 } from 'uuid';
-import { PostsModel as Posts } from '@data/models';
+
+const Models = require('@data/models');
+
+const { Posts } = Models;
 
 const createPost = async (post) => {
   const id = uuidv4();
-  const newPost = await Posts.query().insert({ id, ...post });
+  const newPost = await Posts.create({ id, ...post });
   return newPost;
 };
 
 const getPostById = async (id) => {
-  const post = await Posts.query().findById(id);
+  const post = await Posts.findOne({
+    where: { id },
+  });
   return post;
 };
 
 const getAllPosts = async () => {
-  const posts = await Posts.query();
+  const posts = await Posts.findAll();
   return posts;
 };
 
 const updatePost = async (id, body) => {
-  const updatedPost = await Posts.query().patchAndFetchById(id, body);
+  await Posts.update(body, {
+    where: { id },
+  });
+
+  const updatedPost = await Posts.findOne({ where: { id } });
   return updatedPost;
 };
 
 const deleteById = async (id) => {
-  const deletedPost = await Posts.query().deleteById(id);
+  const deletedPost = await Posts.destroy({
+    where: { id },
+  });
   return deletedPost;
 };
 

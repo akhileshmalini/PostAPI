@@ -25,7 +25,9 @@ app.listen(process.env.SERVER_APP_PORT, () => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Ping Successful');
+  res.status(200).send('Ping Successful');
 });
 
 app.use('/posts', Posts.Router);
+
+module.exports = app;

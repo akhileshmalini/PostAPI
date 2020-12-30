@@ -2,6 +2,7 @@ module.exports = {
   env: {
     es6: true,
     node: true,
+    jest: true,
   },
   extends: ['airbnb-base', 'prettier'],
   plugins: ['prettier'],
@@ -26,10 +27,10 @@ module.exports = {
     'import/resolver': {
       alias: {
         map: [
-          ['@data', './src/data'],
+          ['@data', './database'],
           ['@api', './src/api'],
           ['@utils', './src/utils'],
-          ['@passport', './src/passport'],
+          ['@server', './src/server.js'],
         ],
       },
     },

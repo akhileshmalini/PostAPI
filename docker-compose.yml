@@ -1,28 +1,11 @@
-version: '3'
-services:
-  database:
-    image: 'postgres'
-    container_name: 'postgresdb'
-    ports:
-      - '54320:5432'
-    env_file:
-      - db.env
-    volumes:
-      - database-data:/var/lib/postgresql/data/
-volumes:
-  database-data:
-
-
-    # docker-compose.yml
-
-version: "3.7"
+version: '3.7'
 services:
   postgres:
     image: postgres
     container_name: 'postgresdb'
     env_file:
       - db.env
-    ports: 
+    ports:
       - '5432:5432'
     volumes:
       - database-data:/var/lib/postgresql/data/
@@ -30,15 +13,10 @@ services:
   posts:
     build:
       context: .
-    environment:
-      DB_SCHEMA: postgres
-      DB_USER: postgres
-      DB_PASSWORD: postgres
-      DB_HOST: postgres
     depends_on:
       - postgres
     ports:
       - '8080:80'
-        
+
 volumes:
   database-data:

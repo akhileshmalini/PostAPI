@@ -25,11 +25,12 @@ PostsRouter.post('/post', async (request, response) => {
     const post = await PostsContoller.createPost(newPost);
     response.status(200).send({ id: post.id });
   } catch (e) {
-    if (e.type === 'ModelValidation') {
+    console.log(e);
+    if (e.name === 'SequelizeValidationError') {
       response.status(400).send({
         success: false,
         message: MesssageProvider.messageByKey(Messages.KEYS.VALIDATION_ERROR),
-        data: e.data,
+        errors: e.errors,
       });
     } else {
       response.status(500).send({

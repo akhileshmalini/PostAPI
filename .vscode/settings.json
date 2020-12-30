@@ -1,0 +1,24 @@
+{
+	"sqltools.connections": [
+		{
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 54320,
+			"askForPassword": true,
+			"driver": "PostgreSQL",
+			"name": "Local Docker",
+			"database": "postsdb",
+			"username": "dbuser"
+		},
+		{
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 54320,
+			"driver": "PostgreSQL",
+			"database": "postsdb_test",
+			"name": "Local Docker Test",
+			"password": "dbpassword",
+			"username": "dbuser"
+		}
+	]
+}
